@@ -1,0 +1,11 @@
+<?xml-stylesheet type="text/xsl" href="options1.xsl"?>
+<countries>
+<country name="France"/>
+<country name="Germany"/>
+<country name="Israel"/>
+<country name="Japan"/>
+<country name="Poland"/>
+<country name="United States"/>
+<country name="India" choose="yes"/>
+<country name="Venezuela"/>
+</countries>

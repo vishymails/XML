@@ -1,0 +1,122 @@
+File: Data.xml
+<?xml version="1.0"?>
+ 
+<start_date xmlns="http://www.java2s.com">1999-07-25</start_date>
+
+File: Transform.xslt
+
+<?xml version="1.0"?>
+<xsl:stylesheet version="1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+  <xsl:template match="*">
+    <xsl:copy>
+      <xsl:for-each select="@*">
+        <xsl:copy/>
+      </xsl:for-each>
+      <xsl:apply-templates/>
+    </xsl:copy>
+  </xsl:template>
+
+</xsl:stylesheet>
+
+
+
+
+-----------------------------------------
+
+
+copy-of select="."
+
+
+
+File: Data.xml
+
+<employeeData>
+  <employee fileLoc="2.xml"/>
+  <employee fileLoc="3.xml"/>
+  <employee fileLoc="1.xml"/>
+</employeeData>
+File: Transform.xslt
+<?xml version="1.0" encoding="utf-8"?>
+<xsl:stylesheet version="1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+  <xsl:output method="xml" indent="yes" />
+  <xsl:template match="/">
+    <employeeData>
+      <title>Master Employee Data File</title>
+      <xsl:for-each select="employeeData/employee">
+        <xsl:apply-templates/>
+      </xsl:for-each>
+    </employeeData>
+  </xsl:template>
+  <xsl:template match="employee">
+    <xsl:copy-of select="." />
+  </xsl:template>
+</xsl:stylesheet>
+
+
+-----------------------------------
+
+
+
+template match="/"
+
+
+File: Data.xml
+<?xml version="1.0"?>
+ 
+<start_date xmlns="http://www.java2s.com">1999-07-25</start_date>
+
+File: Transform.xslt
+
+<?xml version="1.0"?>
+<xsl:stylesheet version="1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+  <xsl:template match="/">
+    <xsl:copy-of select="*"/>
+  </xsl:template>
+
+</xsl:stylesheet>
+
+Output:
+
+<?xml version="1.0" encoding="UTF-8"?><start_date xmlns="http://www.java2s.com">1999-07-25</start_date>
+
+ 
+---------------------------------------
+
+
+
+
+apply-templates select="*"
+
+
+
+File: Data.xml
+<?xml version="1.0"?>
+ 
+<start_date xmlns="http://www.java2s.com">1999-07-25</start_date>
+
+File: Transform.xslt
+
+<?xml version="1.0"?>
+<xsl:stylesheet version="1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+  <xsl:template match="/">
+    <xsl:apply-templates select="*"/>
+  </xsl:template>
+
+</xsl:stylesheet>
+
+Output:
+<?xml version="1.0" encoding="UTF-8"?>1999-07-25
+
+ 
+----------------------------
+
+
+
+

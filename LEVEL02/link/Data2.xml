@@ -1,0 +1,20 @@
+<story>
+  <chapter>
+    <title>Chapter 1</title>
+    <para>para 1</para>
+    <para>item 1</para>
+  </chapter>
+
+  <chapter>
+    <title>Chapter 2</title>
+    <para>item 2</para>
+    <para>For while they sit contriving, shall the rest</para>
+  </chapter>
+
+  <chapter>
+    <title>Chapter 3</title>
+    <para>para 2</para>
+    <para>para A</para>
+  </chapter>
+
+</story>
